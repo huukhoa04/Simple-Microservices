@@ -7,10 +7,12 @@ This project demonstrates a simple microservices architecture using .NET 9.0, En
 - .NET 9.0 SDK
 - Docker
 - Docker Compose
+- Node.js
 
 ## Services
 
 - **UserService**: Manages user data and publishes events to RabbitMQ.
+- **OrderService**: Manages order data and subscribes to events from RabbitMQ.
 
 ## Getting Started
 
@@ -76,10 +78,29 @@ dotnet run
 
 The service will be available at `http://localhost:5000`.
 
+### 5. Run the OrderService
+
+Navigate to the `OrderService` directory and install dependencies:
+
+```sh
+cd OrderService
+npm install
+```
+
+Run the service:
+
+```sh
+npm start
+```
+
+The service will be available at `http://localhost:3000`.
+
 ## Endpoints
 
 - `GET /api/user`: Retrieve all users.
 - `POST /api/user`: Create a new user.
+- `GET /api/order`: Retrieve all orders.
+- `POST /api/order`: Create a new order.
 
 ## Additional Information
 
